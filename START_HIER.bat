@@ -9,7 +9,7 @@ set "PY_CMD="
 
 echo ============================================================
 echo   VINTAGE BACKGROUND REMOVER - Python 3.14
-necho ============================================================
+echo ============================================================
 echo.
 
 rem Bevorzuge den Windows Python Launcher mit Python 3.14.
