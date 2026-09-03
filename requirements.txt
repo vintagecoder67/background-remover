@@ -1,4 +1,6 @@
-# CPU-Version für Windows/Linux/macOS
+# Windows/CPU – auf Python 3.14.x abgestimmt
+# ONNX Runtime 1.29.0 liefert offizielle CPython-3.14-Wheels für Windows x86-64/ARM64.
 rembg[cpu]==2.0.83
+onnxruntime==1.29.0
 watchdog>=6.0,<7.0
 pillow-heif>=1.0,<2.0
