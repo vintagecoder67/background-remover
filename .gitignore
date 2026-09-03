@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+Thumbs.db
+
+REIN_HIER/*
+!REIN_HIER/README.txt
+FREIGESTELLT/*
+!FREIGESTELLT/README.txt
