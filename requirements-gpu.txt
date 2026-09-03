@@ -1,4 +1,6 @@
-# NVIDIA/CUDA-Variante. CUDA/cuDNN müssen zur onnxruntime-gpu-Version passen.
+# NVIDIA/CUDA-Variante – Python 3.14.x
+# Hinweis: GPU setzt passende NVIDIA-Treiber/CUDA/cuDNN voraus.
 rembg[gpu]==2.0.83
+onnxruntime-gpu==1.29.0
 watchdog>=6.0,<7.0
 pillow-heif>=1.0,<2.0
