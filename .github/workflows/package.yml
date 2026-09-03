@@ -1,0 +1,49 @@
+name: Build Windows ZIP
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**/*.md"
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build package folder
+        shell: pwsh
+        run: |
+          $root = "package/Vintage-Background-Remover"
+          New-Item -ItemType Directory -Force -Path $root | Out-Null
+          New-Item -ItemType Directory -Force -Path "$root/REIN_HIER" | Out-Null
+          New-Item -ItemType Directory -Force -Path "$root/FREIGESTELLT" | Out-Null
+
+          $files = @(
+            "background_remover.py",
+            "requirements.txt",
+            "requirements-gpu.txt",
+            "START_HIER.bat",
+            "INSTALLIEREN_ODER_REPARIEREN.bat",
+            "ORDNER_EINMAL_VERARBEITEN.bat",
+            "BILDER_HIER_DRAUFZIEHEN.bat",
+            "README.md"
+          )
+
+          foreach ($file in $files) { Copy-Item $file $root }
+          Copy-Item "REIN_HIER/README.txt" "$root/REIN_HIER/README.txt"
+          Copy-Item "FREIGESTELLT/README.txt" "$root/FREIGESTELLT/README.txt"
+          Compress-Archive -Path $root -DestinationPath "Vintage-Background-Remover-Windows.zip" -Force
+
+      - name: Upload ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: Vintage-Background-Remover-Windows
+          path: Vintage-Background-Remover-Windows.zip
+          if-no-files-found: error
