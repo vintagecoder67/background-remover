@@ -1,0 +1,4 @@
+# CPU-Version für Windows/Linux/macOS
+rembg[cpu]==2.0.83
+watchdog>=6.0,<7.0
+pillow-heif>=1.0,<2.0
