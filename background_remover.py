@@ -2,7 +2,7 @@
 """Lokaler Background-Remover für Vintage-/Produktbilder.
 
 - Eingabe: Einzelbild oder Ordner
-- Ausgabe: immer transparentes PNG
+- Ausgabe: standardmäßig PNG auf reinweißem (#FFFFFF) Shop-Hintergrund
 - Watch-Mode: neue Dateien in REIN_HIER werden sofort verarbeitet
 - Dateiformat wird am Inhalt erkannt; HEIC/HEIF via pillow-heif
 - Standardmodell: birefnet-general über rembg
@@ -53,9 +53,9 @@ def parser() -> argparse.ArgumentParser:
     p.add_argument("--no-crop", action="store_true")
     p.add_argument("--padding", type=float, default=0.03)
     p.add_argument("--alpha-threshold", type=int, default=8)
-    p.add_argument("--canvas", type=int, default=0)
+    p.add_argument("--canvas", type=int, default=1600)
     p.add_argument("--margin", type=float, default=0.06)
-    p.add_argument("--background", choices=("transparent", "white"), default="transparent")
+    p.add_argument("--background", choices=("transparent", "white"), default="white")
     p.add_argument("--recursive", action="store_true")
     p.add_argument("--overwrite", action="store_true")
     p.add_argument("--suffix", default=DEFAULT_SUFFIX)
