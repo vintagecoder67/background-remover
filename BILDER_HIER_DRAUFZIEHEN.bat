@@ -18,7 +18,7 @@ if not exist "FREIGESTELLT" mkdir "FREIGESTELLT"
 
 :loop
 if "%~1"=="" goto :done
-.venv\Scripts\python.exe background_remover.py "%~1" "FREIGESTELLT"
+.venv\Scripts\python.exe background_remover.py "%~1" "FREIGESTELLT" --canvas 1600 --margin 0.06 --background white --overwrite
 shift
 goto :loop
 
