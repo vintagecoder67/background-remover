@@ -1,6 +1,6 @@
 # Vintage Background Remover
 
-Lokales Windows-/Python-Tool zum automatischen Freistellen von Kleidungsstücken und anderen Produktfotos. Die Ausgabe wird als **PNG mit transparentem Hintergrund** gespeichert.
+Lokales Windows-/Python-Tool zum automatischen Freistellen von Kleidungsstücken und anderen Produktfotos. Die Ausgabe wird als **PNG auf reinweißem Hintergrund (#FFFFFF / RGB 255,255,255)** gespeichert.
 
 ## Python-Version
 
@@ -62,7 +62,7 @@ FREIGESTELLT/
   umbro_jacke_freigestellt.png
 ```
 
-Der Hintergrund ist standardmäßig transparent. Das sichtbare Produkt wird automatisch zugeschnitten und bekommt einen kleinen transparenten Rand.
+Der Hintergrund ist standardmäßig **reinweiß (#FFFFFF)**. Das sichtbare Produkt wird automatisch zugeschnitten und auf ein **1600×1600-Pixel** großes Shop-Canvas gesetzt. Damit bleibt der Hintergrund unabhängig vom Bildbetrachter tatsächlich weiß und nicht transparent/grau dargestellt.
 
 ## CLI
 
@@ -70,7 +70,7 @@ Der Hintergrund ist standardmäßig transparent. Das sichtbare Produkt wird auto
 python background_remover.py foto.jpg output.png
 python background_remover.py REIN_HIER FREIGESTELLT --recursive
 python background_remover.py REIN_HIER FREIGESTELLT --watch --recursive
-python background_remover.py REIN_HIER FREIGESTELLT --canvas 1600 --margin 0.06
+python background_remover.py REIN_HIER FREIGESTELLT --canvas 1600 --margin 0.06 --background white
 python background_remover.py foto.jpg output.png --json
 ```
 
