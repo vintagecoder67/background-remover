@@ -10,5 +10,5 @@ if not exist ".venv\Scripts\python.exe" (
 
 if not exist "REIN_HIER" mkdir "REIN_HIER"
 if not exist "FREIGESTELLT" mkdir "FREIGESTELLT"
-.venv\Scripts\python.exe background_remover.py "REIN_HIER" "FREIGESTELLT" --recursive
+.venv\Scripts\python.exe background_remover.py "REIN_HIER" "FREIGESTELLT" --recursive --canvas 1600 --margin 0.06 --background white --overwrite
 pause
