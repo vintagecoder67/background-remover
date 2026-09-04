@@ -87,7 +87,7 @@ echo Die PNG-Dateien erscheinen automatisch in FREIGESTELLT.
 echo Dieses Fenster offen lassen.
 echo.
 
-"%VENV_PY%" background_remover.py "REIN_HIER" "FREIGESTELLT" --watch --recursive
+"%VENV_PY%" background_remover.py "REIN_HIER" "FREIGESTELLT" --watch --recursive --canvas 1600 --margin 0.06 --background white --overwrite
 if errorlevel 1 goto :error
 exit /b 0
 
